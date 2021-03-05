@@ -48,5 +48,5 @@ public class CallRust {
 
 ## Thanks
 
-[java-rust-example](https://github.com/drrb/java-rust-example)
+[java-rust-example](https://github.com/drrb/java-rust-example)     
 [vrf-rs](https://github.com/witnet/vrf-rs)
