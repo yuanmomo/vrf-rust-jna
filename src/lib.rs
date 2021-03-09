@@ -30,10 +30,11 @@ pub extern fn prove(sk: *const c_char, preSeed: *const c_char ) -> *const c_char
 
     // Inputs: Secret Key, Public Key (derived) & Message
     let secret_key = hex::decode(to_string(sk)).unwrap();
+    let message = hex::decode(to_string(preSeed)).unwrap();
 
     // parse preSeed
-    let inputMessage = to_string(preSeed);
-    let message: &[u8] = inputMessage.as_bytes();
+    // let inputMessage = to_string(preSeed);
+    // let message: &[u8] = inputMessage.as_bytes();
 
     // get proof
     let pi = vrf.prove(&secret_key, &message).unwrap();
@@ -49,8 +50,9 @@ pub extern fn verify(pk: *const c_char, preSeed: *const c_char, pi: *const c_cha
     let mut vrf = ECVRF::from_suite(CipherSuite::SECP256K1_SHA256_TAI).unwrap();
 
     // parse preSeed
-    let inputMessage = to_string(preSeed);
-    let message: &[u8] = inputMessage.as_bytes();
+    let message = hex::decode(to_string(preSeed)).unwrap();
+    // let inputMessage = to_string(preSeed);
+    // let message: &[u8] = inputMessage.as_bytes();
 
     // init proof
     let proof = hex::decode(to_string(pi)).unwrap();
