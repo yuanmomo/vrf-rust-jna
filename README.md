@@ -22,11 +22,11 @@ import com.sun.jna.Native;
  *
  */
 
-public class CallRust {
+public class JavaCallRust {
 
-    public interface CTreble extends Library {
+    public interface VRFLib extends Library {
 
-        CTreble INSTANCE = (CTreble) Native.loadLibrary("vrfjna", CTreble.class);
+        VRFLib INSTANCE = (VRFLib) Native.loadLibrary("vrfjna", VRFLib.class);
 
         String prove(String sk, String preSeed);
 
@@ -38,11 +38,10 @@ public class CallRust {
         String preSeed = "1ffff";
         String pk = "032c8c31fc9f990c6b55e3865a184a4ce50e09481f2eaeb3e60ec1cea13a6ae645";
 
-        String prove = CTreble.INSTANCE.prove(sk, preSeed);
+        String prove = VRFLib.INSTANCE.prove(sk, preSeed);
         System.out.println(prove);
-        System.out.println(CTreble.INSTANCE.verify(pk, preSeed, prove));
+        System.out.println(VRFLib.INSTANCE.verify(pk, preSeed, prove));
     }
-
 }
 ```
 
