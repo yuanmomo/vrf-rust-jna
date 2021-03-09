@@ -35,7 +35,7 @@ public class CallRust {
 
     public static void main(String[] args) {
         String sk = "c9afa9d845ba75166b5c215767b1d6934e50c3db36e89b127b8a622b120f6721";
-        String preSeed = "sample";
+        String preSeed = "1ffff";
         String pk = "032c8c31fc9f990c6b55e3865a184a4ce50e09481f2eaeb3e60ec1cea13a6ae645";
 
         String prove = CTreble.INSTANCE.prove(sk, preSeed);
