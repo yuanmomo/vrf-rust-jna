@@ -2,6 +2,48 @@
 
 A JNA lib of vrf-rs for Java.
 
+## How to build library ?
+
+* install dependencies
+
+```Bash
+# macOS
+brew install openssl@1.1
+
+# Arch Linux
+sudo pacman -S pkg-config openssl
+
+# Debian and Ubuntu
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install pkg-config libssl-dev
+
+# Fedora
+sudo dnf install pkg-config openssl-devel
+```
+
+* install rust
+
+```Bash
+# install
+curl https://sh.rustup.rs -sSf | sh
+
+# 增加环境变量
+source $HOME/.cargo/env
+```
+
+* build
+
+```Bash
+# build
+cargo build --release
+
+# list library
+ls target/release/libvrfjna*
+```
+
+## How to use in Java ?
+
+
 * Java Dependency
 
 ```xml
